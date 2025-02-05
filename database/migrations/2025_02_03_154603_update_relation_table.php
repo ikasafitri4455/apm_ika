@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('masyarakat_id')->references('id')->on('users')->onUpdateCascade()->onDeleteCascade();
         });
 
-        // Relasi Tanggapan Ke PEngaduan dan Users
+        // Relasi Tanggapan Ke Pengaduan dan Users
         Schema::table('tanggapan', function(Blueprint $table){
             $table->foreign('users_id')->references('id')->on('users')->onUpdateCascade()->onDeleteCascade();   
             $table->foreign('pengaduan_id')->references('id')->on('pengaduan')->onUpdateCascade()->onDeleteCascade();
