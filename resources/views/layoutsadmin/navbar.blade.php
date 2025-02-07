@@ -26,9 +26,9 @@
 <nav
   class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
 >
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <nav
-      class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
+      class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-4 d-none d-lg-flex"
     >
       <div class="input-group">
         <div class="input-group-prepend">
@@ -318,7 +318,7 @@
         </div>
       </li>
 
-      <li class="nav-item topbar-user dropdown hidden-caret">
+      <li class="nav-item topbar-user dropdown hidden-caret me-4">
         <a
           class="dropdown-toggle profile-pic"
           data-bs-toggle="dropdown"

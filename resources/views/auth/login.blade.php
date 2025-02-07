@@ -50,10 +50,10 @@
 </nav>
 
 <!-- Form Login & Register -->
-<div class="container form-container">
+<div class="p-4 container form-container">
     <div class="row">
         <!-- Login Form -->
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="card">
                 <h4 class="text-center">Login</h4>
                 <form>
