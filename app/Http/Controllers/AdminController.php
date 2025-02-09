@@ -16,7 +16,7 @@ class AdminController extends Controller
 {
     $admins = Petugas::all();
 
-    return view('admin.profile.admin', compact('admins'));
+    return view('admin.admin.data_admin', compact('admins'));
 }
 
 
@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function create()
     {
         $admins = Petugas::all();
-        return view('admin.profile.tambah_admin',compact('admins'));
+        return view('admin.admin.tambah_admin',compact('admins'));
     }
 
     /**
