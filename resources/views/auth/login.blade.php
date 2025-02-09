@@ -3,81 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APM - Login & Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-        }
-        .form-container {
-            margin-top: 50px;
-        }
-        .navbar-nav .nav-link {
-            font-weight: bold;
-            color: #000;
-        }
-        .navbar-nav .nav-link.active {
-            color: #28a745;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
         }
         .card {
+            width: 350px;
             padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: white;
         }
         .btn-login {
-            background-color: #198754;
-            color: white;
             width: 100%;
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+        .text-center {
+            text-align: center;
         }
     </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand fw-bold" href="#">APM</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Information</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Kontak Kami</a></li>
-                <li class="nav-item"><a class="nav-link active" href="#">Register / Login</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Form Login & Register -->
-<div class="p-4 container form-container">
-    <div class="row">
-        <!-- Login Form -->
-        <div class="col-md-6">
-            <div class="card">
-                <h4 class="text-center">Login</h4>
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" placeholder="Masukkan email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="password" class="form-control" placeholder="Masukkan password">
-                    </div>
-                    <button type="submit" class="btn btn-login">🔒 Login</button>
-                </form>
-                <div>
-                    <p>jika belum punya akun silahkan <a href="/register">daftar</a> terlebih dahulu</p>
-                </div>
+    <div class="card">
+        <h4 class="text-center">Login</h4>
+        <form action="/store/login" method="post" class="mt-4">
+            @csrf
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input name="username" type="text" class="form-control" value="{{old('username')}}" placeholder="Masukkan username">
+                @error('username')
+                    <p class="text-danger">{{$message}}</p>
+                @enderror
             </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" value={{old('password')}} placeholder="Masukkan password">
+                @error('password')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+            </div>
+            <button type="submit" class="btn btn-login">🔒 Login</button>
+        </form>
+        <div class="text-center mt-3">
+            <p>Jika belum punya akun silahkan <a href="/register">daftar</a> terlebih dahulu</p>
         </div>
-        <!-- Register Form -->
-
-
     </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

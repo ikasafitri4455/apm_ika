@@ -35,7 +35,7 @@ Route::middleware(['auth', 'role:petugas,admin,masyarakat'])->group(function () 
 
     // Dashboard and general views
     Route::get('/index', function () {
-        return view('admin.dasboard');
+        return view('admin.index');
     });
 
     Route::get('/profile', function () {
