@@ -15,7 +15,7 @@
 
 <div class="container mt-4">
     <div class="card">
-    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+    <div class="card-header bg-white text-black d-flex justify-content-between align-items-center">
             <h3 class="card-title mb-0">Daftar Pengaduan</h3>
             <a href="tambah_pengaduan" class="btn btn-light btn-round">Tambah pengaduan</a>
         </div>
@@ -31,7 +31,7 @@
                         <th>Isi Laporan</th>
                         <th>Foto</th>
                         <th>Status</th>
-                        <th>Opsi</th>
+                        <th>aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,7 +62,7 @@
                             <td>
 
 
-                                <a href="/edit_pengaduan/{{$pengaduan->id}}"class="btn btn-sm btn-info mt-1">E</a>
+                                <a href="/edit_pengaduan/{{$pengaduan->id}}"class="btn btn-sm btn-info mt-1">E</a><br>
                                 <!-- Link Penghapusan -->
                                 <form action="{{ route('destroy_pengaduan', $pengaduan->id) }}" method="POST" style="display:inline-block;">
                                     @csrf

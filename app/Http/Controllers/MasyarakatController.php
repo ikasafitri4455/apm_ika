@@ -17,27 +17,24 @@ class MasyarakatController extends Controller
     {
         // Mengambil semua data masyarakat dan menggunakan paginasi 10 data per halaman
         $masyarakats = Petugas::paginate(10);
-        return view('admin.masyarakat.masyarakat', compact('masyarakats'));
+        return view('admin.masyarakat.data_masyarakat', compact('masyarakats'));
     }
 
     // Tambahkan fungsi-fungsi lain untuk edit, delete, dll.
 
     public function dashboard()
-{
-    // Check if the user is authenticated
-    if (!Auth::check()) {
-        return redirect('/login')->withErrors('Silakan login terlebih dahulu.');
+    {
+        $pengaduans = Pengaduan::where('masyarakat_id', Auth::id())
+        ->orderBy('tanggal_pengaduan', 'desc')
+        ->paginate(4); // Batasi 10 data per halaman
+        $kategoris = Kategori::all();
+        return view('masyarakat.dashboard_masyarakat', compact('pengaduans','kategoris'));
     }
-
-    // Retrieve categories and return the view if authenticated
-    $kategoris = Kategori::all();
-    return view('masyarakat.masyarakat', compact('kategoris'));
-}
 
     // Menampilkan halaman tambah data masyarakat
     public function create()
     {
-        return view('admin.masyarakat.tambahmasyarakat'); // Sesuaikan dengan nama view
+        return view('admin.masyarakat.tambah_masyarakat'); // Sesuaikan dengan nama view
     }
 
     // Menyimpan data masyarakat baru ke database
@@ -77,7 +74,7 @@ class MasyarakatController extends Controller
         session()->flash('success', 'Masyarakat berhasil ditambahkan!');
 
 
-        return redirect('masyarakat')->with('success', 'Data masyarakat berhasil ditambahkan.');
+        return redirect('masyarakat.dashboard_masyarakat')->with('success', 'Data masyarakat berhasil ditambahkan.');
     }
 
     // Menampilkan halaman edit data masyarakat
@@ -149,7 +146,7 @@ public function data()
 {
     // Ambil hanya pengaduan milik user masyarakat yang sedang login
     $pengaduans = Pengaduan::where('masyarakat_id', Auth::id())->get();
-    return view('masyarakat.daftar_pengaduan', compact('pengaduans'));
+    return view('admin.pengaduan.data_pengaduan', compact('pengaduans'));
 }
 
 

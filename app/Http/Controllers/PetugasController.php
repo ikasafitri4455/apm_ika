@@ -12,12 +12,12 @@ class PetugasController extends Controller {
     // Display a listing of the petugas
     public function index() {
         $petugass = User::whereIn('role', ['admin', 'petugas'])->get();
-        return view('admin.data_petugas.petugas_index', compact('petugass'));
+        return view('admin.petugas.data_petugas', compact('petugass'));
     }
 
     // Show the form for creating a new petugas
     public function create() {
-        return view('admin.data_petugas.tambah_petugas');
+        return view('admin.petugas.tambah_petugas');
     }
 
     // Store a newly created petugas in the database
@@ -52,7 +52,7 @@ class PetugasController extends Controller {
     // Show the form for editing the specified petugas
     public function edit($id) {
         $petugas = User::findOrFail($id);
-        return view('admin.data_petugas.edit_petugas', compact('petugas'));
+        return view('admin.petugas.edit_petugas', compact('petugas'));
     }
 
     // Update the specified petugas in the database

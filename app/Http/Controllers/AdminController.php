@@ -89,7 +89,7 @@ class AdminController extends Controller
     public function edit($id)
     {
         $admins = Petugas::findOrFail($id);
-        return view('admin.profile.edit_admin', compact('admins'));
+        return view('admin.admin.edit_admin', compact('admins'));
     }
 
     /**

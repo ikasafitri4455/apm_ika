@@ -12,12 +12,37 @@
           <li><a href="#hero" class="active">Beranda<br></a></li>
           <li><a href="#about">Tentang Kami</a></li>
           <li><a href="daftar_pengaduan">daftar pengaduan</a></li>
-          <li><a href="data_pengaduan ">tambah pengaduan</a></li>
+          <li><a href="tambah_pengaduan ">tambah pengaduan</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="/login">Register</a>
+      <a class="btn-getstarted" href="/log">Register</a>
 
     </div>
   </header>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+                    function confirmLogout() {
+                        Swal.fire({
+                        title: 'Apakah Anda yakin ingin logout?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, Logout',
+                        cancelButtonText: 'Batal',
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('logout-form').submit();
+                        }
+                        });
+                    }
+                    </script>
+
+                    <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                    @csrf
+                    </form>
+
