@@ -334,7 +334,7 @@
           </div>
           <span class="profile-username">
             <span class="op-7">Hi,</span>
-            <span class="fw-bold">Hizrian</span>
+            <span class="fw-bold">{{auth()->user()->nama_lengkap}}</span>
           </span>
         </a>
         <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -367,7 +367,9 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Account Setting</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Logout</a>
+              <a href="#" onclick="confirmLogout();" class="dropdown-item text-danger">
+                Logout
+            </a>
             </li>
           </div>
         </ul>
@@ -375,3 +377,25 @@
     </ul>
   </div>
 </nav>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+                    function confirmLogout() {
+                        Swal.fire({
+                        title: 'Apakah Anda yakin ingin logout?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Ya, Logout',
+                        cancelButtonText: 'Batal',
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33'
+                        }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('logout-form').submit();
+                        }
+                        });
+                    }
+                    </script>
+
+                    <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                    @csrf
+                    </form>

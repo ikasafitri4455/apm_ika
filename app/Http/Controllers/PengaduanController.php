@@ -20,7 +20,7 @@ class PengaduanController extends Controller
     {
         $petugas    = Petugas::all();
         $pengaduans = Pengaduan::with('masyarakat', 'kategori')->latest()->get();
-        return view('admin.laporan.laporan_keamanan', compact('petugas','pengaduans'));
+        return view('admin.pengaduan.data_pengaduan', compact('petugas','pengaduans'));
     }
 
     /**
@@ -33,7 +33,7 @@ class PengaduanController extends Controller
 
         $masyarakats = Petugas::all();
          $kategoris = Kategori::all(); // Pastikan Kategori memiliki data
-         return view('masyarakat.create_pengaduan',compact('masyarakats','kategoris'));
+         return view('masyarakat.tambah_pengaduan',compact('masyarakats','kategoris'));
      }
 
 
@@ -88,7 +88,7 @@ class PengaduanController extends Controller
         $pengaduan->status = '0'; // Status default
         $pengaduan->save();
 
-        return redirect('daftar_pengaduan')->with('success', 'Data Berhasil Dibuat');
+        return redirect('dashboard_masyarakat')->with('success', 'Data Berhasil Dibuat');
 
     }
 
@@ -176,7 +176,7 @@ class PengaduanController extends Controller
 
     $pengaduans = $query->get();
 
-    return view('admin.generate.generate_laporan', compact('pengaduans'));
+    return view('admin.laporan.data_laporan', compact('pengaduans'));
 }
 
 public function exportLaporan()
@@ -237,7 +237,7 @@ public function exportLaporan()
     $pengaduan->status = $request->status;
     $pengaduan->save();
 
-    return redirect()->route('data_pengaduan')->with('success', 'Tanggapan dan status pengaduan berhasil diperbarui.');
+    return redirect('data_pengaduan')->with('success', 'Tanggapan dan status pengaduan berhasil diperbarui.');
 }
 
 

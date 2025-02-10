@@ -3,8 +3,8 @@
       <!-- Logo Header -->
       <div class="logo-header" data-background-color="dark">
         <a href="index.html" class="logo">
-          <img src="{{ asset('') }}assets/img/kaiadmin/cilacaplogo.png" alt="navbar brand" class="navbar-brand" height="20" />
-          <span class="text-white p-1">Pengaduan Sekitar</span>
+          <img src="{{ asset('') }}assetss/img/kaiadmin/logo.jpeg" alt="navbar brand" class="navbar-brand" height="20" />
+          <span class="text-white p-1">PS</span>
         </a>
         <div class="nav-toggle">
           <button class="btn btn-toggle toggle-sidebar">
