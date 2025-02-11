@@ -108,3 +108,5 @@ Route::middleware(['auth', 'role:petugas,admin,masyarakat'])->group(function () 
     // Logout route
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::get('/masyarakat_dashboard',[MasyarakatController::class,'dashboardmasyarakat']);

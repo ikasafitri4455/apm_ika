@@ -33,7 +33,7 @@ class PengaduanController extends Controller
 
         $masyarakats = Petugas::all();
          $kategoris = Kategori::all(); // Pastikan Kategori memiliki data
-         return view('masyarakat.tambah_pengaduan',compact('masyarakats','kategoris'));
+         return view('admin.masyarakat.tambah_masyarakat',compact('masyarakats','kategoris'));
      }
 
 
