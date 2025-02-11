@@ -10,9 +10,9 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="#hero" class="active">Beranda<br></a></li>
-          <li><a href="#about">Tentang Kami</a></li>
-          <li><a href="daftar_pengaduan">daftar pengaduan</a></li>
-          <li><a href="tambah_pengaduan ">tambah pengaduan</a></li>
+          <li><a href="#tentang_kami">Tentang Kami</a></li>
+          <li><a href="#tambah_pengaduan ">tambah pengaduan</a></li>
+          <li><a href="#create_pengaduan">daftar pengaduan</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>

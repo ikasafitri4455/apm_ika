@@ -30,6 +30,14 @@ class MasyarakatController extends Controller
         $kategoris = Kategori::all();
         return view('masyarakat.dashboard_masyarakat', compact('pengaduans','kategoris'));
     }
+    public function dashboardmasyarakat()
+    {
+        $pengaduans = Pengaduan::where('masyarakat_id', Auth::id())
+        ->orderBy('tanggal_pengaduan', 'desc')
+        ->paginate(4); // Batasi 10 data per halaman
+        $kategoris = Kategori::all();
+        return view('masyarakat.masyarakat_dashboard', compact('pengaduans','kategoris'));
+    }
 
     // Menampilkan halaman tambah data masyarakat
     public function create()
