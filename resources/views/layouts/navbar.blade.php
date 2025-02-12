@@ -7,17 +7,31 @@
         <h1 class="sitename">PS</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav id="navmenu" class="navmenu" style="display: none;">
         <ul>
           <li><a href="#hero" class="active">Beranda<br></a></li>
           <li><a href="#tentang_kami">Tentang Kami</a></li>
-          <li><a href="#tambah_pengaduan ">tambah pengaduan</a></li>
-          <li><a href="#create_pengaduan">daftar pengaduan</a></li>
+          <li><a href="#tambah_pengaduan">Tambah Pengaduan</a></li>
+          <li><a href="#create_pengaduan">Daftar Pengaduan</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="/log">Register</a>
+      <a id="loginLink" class="btn-getstarted" href="/login" style="display: none;">Login</a>
+      <a id="logoutLink" href="logout" class="btn-getstarted" style="display: none;">Log out</a>
+
+      <script>
+        // Simulasi status login (ganti sesuai dengan mekanisme sesungguhnya)
+        var isLoggedIn = false; // Set true jika user sudah login
+
+        if (isLoggedIn) {
+          document.getElementById("navmenu").style.display = "block";
+          document.getElementById("logoutLink").style.display = "inline-block";
+        } else {
+          document.getElementById("loginLink").style.display = "inline-block";
+        }
+      </script>
+
 
     </div>
   </header>
