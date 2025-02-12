@@ -188,7 +188,7 @@ public function exportLaporan()
         $pengaduans =Pengaduan::findOrFail($id);
         $petugas    =Petugas::all();
 
-        return view('admin.generate.formulir_laporan',compact('pengaduans','petugas'));
+        return view('admin.laporan.formulir_laporan',compact('pengaduans','petugas'));
     }
 
 

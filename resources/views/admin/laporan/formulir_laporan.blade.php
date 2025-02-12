@@ -39,7 +39,7 @@
                     @forelse($pengaduans as $pengaduan)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $pengaduan->petugass->nama_lengkap }}</td>
+                            <td>{{ $pengaduan->petugas->nama_lengkap ?? 'tidak ada petugas' }}</td>
                             <td>{{ $pengaduan->tanggal_pengaduan }}</td>
                             <td>{{ $pengaduan->kategori->nama_kategori }}</td>
                             <td>{{ $pengaduan->isi_pengaduan }}</td>
