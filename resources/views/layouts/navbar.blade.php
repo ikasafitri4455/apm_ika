@@ -4,7 +4,10 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">PS</h1>
+        <h1 class="sitename">
+            <img src="{{asset('assets/img/logoapk.png')}}" alt="logo apk">
+            PS</h1>
+
       </a>
 
       <nav id="navmenu" class="navmenu" style="display: none;">
@@ -14,11 +17,29 @@
           <li><a href="#tambah_pengaduan">Tambah Pengaduan</a></li>
           <li><a href="#create_pengaduan">Daftar Pengaduan</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle d-xl-none "></i>
       </nav>
+        @if (auth()->login ?? 'login')
+            <a href="#" onclick="confirmLogout();" class="btn-getstarted text-white">
+                Logout
+            </a>
+        @else
+            <a class="nav-link scrollto" href="/login">Register / Login</a>
+        @endif
 
-      <a id="loginLink" class="btn-getstarted" href="/login" style="display: none;">Login</a>
-      <a id="logoutLink" href="logout" class="btn-getstarted" style="display: none;">Log out</a>
+    <script>
+        function confirmLogout() {
+            if (confirm("Apakah Anda yakin ingin logout?")) {
+                document.getElementById("logoutForm").submit();
+            }
+        }
+    </script>
+
+    <!-- Tambahkan form untuk logout -->
+    <form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+
 
       <script>
         // Simulasi status login (ganti sesuai dengan mekanisme sesungguhnya)

@@ -40,6 +40,7 @@
     <div class="d-flex justify-content-center align-items-center min-vh-100">
         <div class="col-md-6">
             <div class="card shadow-lg p-4 rounded">
+                <img src="{{asset('assets/img/logoapk.png')}}" alt="logo apk" width="50px" class="d-block mx-auto mb-3">
                 <h3 class="text-center mb-4 text-success">Form Registrasi</h3>
                 <form action="/store/register" method="post">
                     @csrf

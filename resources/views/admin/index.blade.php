@@ -26,8 +26,8 @@
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Visitors</p>
-                          <h4 class="card-title">1,294</h4>
+                            <p class="card-category">Data Petugas</p>
+                            <h4 class="card-title">{{$totaladmin}}</h4>
                         </div>
                       </div>
                     </div>
@@ -47,8 +47,8 @@
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Subscribers</p>
-                          <h4 class="card-title">1303</h4>
+                            <p class="card-category">Jumlah Laporan</p>
+                            <h4 class="card-title">{{ $totalPengaduan }}</h4>
                         </div>
                       </div>
                     </div>
@@ -68,8 +68,8 @@
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Sales</p>
-                          <h4 class="card-title">$ 1,345</h4>
+                            <p class="card-category">Jumlah diproses</p>
+                            <h4 class="card-title">.</h4>
                         </div>
                       </div>
                     </div>
@@ -89,8 +89,8 @@
                       </div>
                       <div class="col col-stats ms-3 ms-sm-0">
                         <div class="numbers">
-                          <p class="card-category">Order</p>
-                          <h4 class="card-title">576</h4>
+                            <p class="card-category">Laporan Selesai</p>
+                            <h4 class="card-title">{{$tanggapanSelesai}}</h4>
                         </div>
                       </div>
                     </div>
