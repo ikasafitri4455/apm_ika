@@ -40,8 +40,8 @@
                             <td>{{ $index + 1 }}</td>
                             <td>{{ $pengaduan->masyarakat->nama_lengkap ?? 'Tidak Ada Data' }}</td>
                             <td>{{ $pengaduan->kategori->nama_kategori ?? 'Tidak Ada Data' }}</td>
-                            <td>{{ $pengaduan->tanggal_pengaduan }}</td>
-                            <td>{{ $pengaduan->isi_pengaduan }}</td>
+                            <td>{{ $pengaduan->tanggal_pengaduan ?? 'Tidak Ada Data'}}</td>
+                            <td>{{ $pengaduan->isi_pengaduan ?? 'Tidak Ada Data' }}</td>
                             <td>
                                 @if ($pengaduan->foto)
                                     <img src="{{ Storage::url($pengaduan->foto) }}" alt="Foto Pengaduan" width="100">

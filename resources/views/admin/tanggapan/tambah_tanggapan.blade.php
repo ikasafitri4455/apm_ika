@@ -22,11 +22,13 @@
         <!-- Status Pengaduan -->
         <div class="col-12">
             <label for="status" class="form-label">Status Pengaduan</label>
-            <select class="form-control" name="status" required>
-                <option value="0" {{ $pengaduan->status == '0' ? '0' : '' }}>Pending</option>
-                <option value="proses" {{ $pengaduan->status == 'proses' ? 'selected' : '' }}>Proses</option>
-                <option value="selesai" {{ $pengaduan->status == 'selesai' ? 'selected' : '' }}>Selesai</option>
-            </select>
+            <label for="status" class="form-label">Status Pengaduan</label>
+                    <select class="form-control" name="status" required>
+                    <option value="ditolak" {{ $pengaduan->status == 'ditolak' ? 'selected' : '' }}>ditolak</option>
+                        <option value="0" {{ $pengaduan->status == '0' ? 'selected' : '' }}>Pending</option>
+                        <option value="diproses" {{ $pengaduan->status == 'diproses' ? 'selected' : '' }}>Diproses</option>
+                        <option value="selesai" {{ $pengaduan->status == 'selesai' ? 'selected' : '' }}>Selesai</option>
+                    </select>
             @error('status')
                 <div class="text-danger">{{ $message }}</div>
             @enderror

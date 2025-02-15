@@ -34,23 +34,26 @@
     </style>
 </head>
 <body>
-    <div class="card">
-        <h4 class="text-center">Login</h4>
-        <form action="/store/login" method="post" class="mt-4">
+    <div class="card text-center">
+        <div class="d-flex flex-column align-items-center">
+            <img src="{{asset('assets/img/logoapk.png')}}" alt="logo apk" width="50px">
+            <h4>Login</h4>
+        </div>
+        <form action="/store/login" method="post" class="mt-4 text-start">
             @csrf
-            <div class="mb-3">
-                <label class="form-label">Username</label>
+            <div class="mb-3 d-flex align-items-center">
+                <label class="form-label me-2" style="width: 100px;">Username</label>
                 <input name="username" type="text" class="form-control" value="{{old('username')}}" placeholder="Masukkan username">
                 @error('username')
                     <p class="text-danger">{{$message}}</p>
                 @enderror
             </div>
-            <div class="mb-3">
-                <label class="form-label">Password</label>
-                <input name="password" type="password" class="form-control" value={{old('password')}} placeholder="Masukkan password">
+            <div class="mb-3 d-flex align-items-center">
+                <label class="form-label me-2" style="width: 100px;">Password</label>
+                <input name="password" type="password" class="form-control" value="{{old('password')}}" placeholder="Masukkan password">
                 @error('password')
                 <p class="text-danger">{{$message}}</p>
-            @enderror
+                @enderror
             </div>
             <button type="submit" class="btn btn-login">🔒 Login</button>
         </form>
@@ -58,5 +61,7 @@
             <p>Jika belum punya akun silahkan <a href="/register">daftar</a> terlebih dahulu</p>
         </div>
     </div>
+
+
 </body>
 </html>

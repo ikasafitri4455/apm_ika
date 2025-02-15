@@ -351,6 +351,7 @@
             <div class="d-flex justify-content-center">
                 {{ $pengaduans->links() }}
             </div>
+
         </div>
     </section>
 

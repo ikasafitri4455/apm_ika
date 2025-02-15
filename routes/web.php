@@ -10,6 +10,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\TanggapanController;
 use App\Http\Controllers\MasyarakatController;
+use App\Http\controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,9 @@ Route::middleware(['auth', 'role:petugas,admin,masyarakat'])->group(function () 
     Route::get('/index', function () {
         return view('admin.index');
     });
+
+     // index untuk admin dan petugas
+     Route::get('/index', [DashboardController::class, 'index']);
 
     Route::get('/profile', function () {
         return view('admin.profile.masyarakat');

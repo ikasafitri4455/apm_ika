@@ -217,7 +217,7 @@ public function exportLaporan()
     // Validasi input
     $request->validate([
         'isi_tanggapan' => 'required|string',
-        'status' => 'required|in:0,proses,selesai',
+        'status' => 'nullable|in:0,diproses,selesai',
     ]);
 
     // Cari pengaduan berdasarkan ID
