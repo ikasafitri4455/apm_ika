@@ -184,12 +184,16 @@ public function exportLaporan()
     // Generate export logic (Excel or PDF)
 }
 
-    public function formulir($id){
-        $pengaduans =Pengaduan::findOrFail($id);
-        $petugas    =Petugas::all();
+    public function formulir($id) {
+        $pengaduans = Pengaduan::where('id', $id)->get();
 
-        return view('admin.laporan.formulir_laporan',compact('pengaduans','petugas'));
+
+
+
+        $petugas = Petugas::all();
+        return view('admin.laporan.formulir_laporan', compact('pengaduans', 'petugas'));
     }
+
 
 
 
