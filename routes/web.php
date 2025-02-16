@@ -103,7 +103,7 @@ Route::middleware(['auth', 'role:petugas,admin,masyarakat'])->group(function () 
     Route::delete('/destroy_tanggapan/{id}',[PengaduanController::class,'destroy'])->name('tanggapan.destroy');
 
     //generate laporan
-    Route::get('/generate_laporan', [PengaduanController::class, 'report'])->name('pengaduan.laporan');
+    Route::get('/generate_laporan', [PengaduanController::class, 'report'])->name('generate.laporan');
     Route::get('/export-laporan-pengaduan', [PengaduanController::class, 'exportLaporan'])->name('pengaduan.export');
     Route::get('/formulir_laporan/{id}',[PengaduanController::class,'formulir']);
 

@@ -4,15 +4,16 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
       name="viewport"
     />
+
     <link
       rel="icon"
-      href="{{asset('assetss/img/kaiadmin/cilacaplogo.png')}}"
+      href="{{ asset('assets/img/logo.png') }}   "
       type="image/x-icon"
     />
 
     <!-- Fonts and icons -->
     <script src="{{ asset('') }}assetss/js/plugin/webfont/webfont.min.js"></script>
-    <!-- <script src="{{ asset('') }}assetss/css/fonts.min.css"></script> -->
+
     <script>
         var publicPath = "{{ asset('assetss/css/fonts.min.css') }}";
       WebFont.load({
@@ -55,3 +56,4 @@
     <link rel="stylesheet" href="{{asset('assetss/css/demo.css')}}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+

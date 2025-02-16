@@ -34,15 +34,15 @@
 
   <!-- Pengaduan Section -->
         <li class="nav-item {{ request()->is('pengaduan','data_pengaduan') ? 'active' : '' }}">
-            <a href="{{ url('index') }}" class="{{ request()->is('index') ? '' : 'collapsed' }}">
+            <a href="{{ url('data_pengaduan') }}" class="{{ request()->is('data_pengaduan') ? '' : 'collapsed' }}">
                 <i class="fas fa-comment-dots"></i>
                 <p>pengaduan</p>
             </a>
         </li>
 
 <li class="nav-item {{ request()->is('data_tanggapan','tambah_tanggapan/*') ? 'active' : '' }}">
-    <a href="data_tanggapan">
-            <a href="{{ url('data_pengaduan') }}">
+    
+            <a href="{{ url('data_tanggapan') }}">
             <i class="fas fa-comments"></i>
             <p>Tanggapan</p>
         </a>

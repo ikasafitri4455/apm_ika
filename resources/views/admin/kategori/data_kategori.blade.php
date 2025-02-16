@@ -13,6 +13,7 @@
 @endif
 
 <div class="col-md-12">
+   <div class="p-4 mt-4 me-5">
     <div class="card">
         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
             <h3 class="card-title mb-0">Data Kategori </h3>
@@ -111,6 +112,7 @@
             </table>
         </div>
     </div>
+   </div>
 </div>
 
 @endsection

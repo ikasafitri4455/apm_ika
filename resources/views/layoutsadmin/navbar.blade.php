@@ -92,7 +92,7 @@
         >
           <div class="avatar-sm">
             <img
-              src="public/assets/img/Fotoapk.jpg"
+              src="{{asset('assetss/img/ppika.jpg')}}"
               alt="..."
               class="avatar-img rounded-circle"
             />
@@ -108,7 +108,7 @@
               <div class="user-box">
                 <div class="avatar-lg">
                   <img
-                    src="assets/img/profile.jpg"
+                    src="{{asset('assetss/img/ppika.jpg')}}"
                     alt="image profile"
                     class="avatar-img rounded"
                   />
