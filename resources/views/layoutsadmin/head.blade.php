@@ -7,7 +7,7 @@
 
     <link
       rel="icon"
-      href="{{ asset('assets/img/logo.png') }}   "
+      href="{{ asset('assets/img/logoapk.png') }}   "
       type="image/x-icon"
     />
 

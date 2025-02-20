@@ -27,7 +27,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Tentang Kami</h2>
-        <p>Kami akan segera menindak lanjuti keluhan anda dengan secepatnya dan sebaik mung</p>
+        <p>Kami akan segera menindak lanjuti keluhan anda dengan secepatnya dan sebaik mungkin</p>
       </div><!-- End Section Title -->
 
       <div class="container">

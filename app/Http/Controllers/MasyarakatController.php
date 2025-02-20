@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Petugas;
 use App\Models\Kategori;
 use App\Models\Pengaduan;
+use App\Models\Tanggapan;
 use App\Models\Masyarakat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -98,10 +99,10 @@ class MasyarakatController extends Controller
         $masyarakat = Petugas::findOrFail($id);
 
         $request->validate([
-            'nik' => 'required|max:16|unique:masyarakats,nik,' . $id,
+            'nik' => 'required|max:16|unique:users,nik,' . $id,
             'nama_lengkap' => 'required|string|max:255',
             'jenis_kelamin' => 'required|in:laki-laki,perempuan',
-            'username' => 'required|max:255|unique:masyarakats,username,' . $id,
+            'username' => 'required|max:255|unique:users,username,' . $id,
             'password' => 'nullable|string|min:8',
             'no_telepon' => 'required|max:15',
             'alamat' => 'required|string',
@@ -157,5 +158,12 @@ public function data()
     return view('admin.pengaduan.data_pengaduan', compact('pengaduans'));
 }
 
+public  function data_tanggapan($id){
+
+    $pengaduans = Pengaduan::findorfail($id);
+    $tanggapans = Tanggapan::where('pengaduan_id',$id)->get();
+
+    return view('masyarakat.tanggapan_admin',compact('pengaduans','tanggapans'));
+}
 
 }

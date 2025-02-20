@@ -10,22 +10,27 @@
 
       </a>
 
-      <nav id="navmenu" class="navmenu" style="display: none;">
-        <ul>
-          <li><a href="#hero" class="active">Beranda<br></a></li>
-          <li><a href="#tentang_kami">Tentang Kami</a></li>
-          <li><a href="#tambah_pengaduan">Tambah Pengaduan</a></li>
-          <li><a href="#create_pengaduan">Daftar Pengaduan</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none "></i>
-      </nav>
-        @if (auth()->login ?? 'login')
-            <a href="#" onclick="confirmLogout();" class="btn-getstarted text-white">
-                Logout
-            </a>
-        @else
-            <a class="nav-link scrollto" href="/login">Register / Login</a>
-        @endif
+        <nav id="navmenu" class="navmenu" style="display: none;">
+            <ul>
+            <li><a href="#hero" class="active">Beranda<br></a></li>
+            <li><a href="#tentang_kami">Tentang Kami</a></li>
+            <li><a href="#tambah_pengaduan">Tambah Pengaduan</a></li>
+            <li><a href="#create_pengaduan">Daftar Pengaduan</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none "></i>
+        </nav>
+        @if (auth()->check())
+        <!-- Tampilkan tombol Logout jika pengguna sudah login -->
+        <a href="#" onclick="confirmLogout();" class="btn-getstarted text-white">
+            Logout
+        </a>
+        <form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+    @else
+        <!-- Tampilkan tombol Login/Register jika pengguna belum login -->
+        <a class="nav-link scrollto" href="{{ route('login') }}">Register / Login</a>
+    @endif
 
     <script>
         function confirmLogout() {
@@ -35,26 +40,27 @@
         }
     </script>
 
-    <!-- Tambahkan form untuk logout -->
-    <form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display: none;">
-        @csrf
-    </form>
+
+        <!-- Tambahkan form untuk logout -->
+        <form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
 
 
-      <script>
-        // Simulasi status login (ganti sesuai dengan mekanisme sesungguhnya)
-        var isLoggedIn = false; // Set true jika user sudah login
+        <script>
+            // Simulasi status login (ganti sesuai dengan mekanisme sesungguhnya)
+            var isLoggedIn = false; // Set true jika user sudah login
 
-        if (isLoggedIn) {
-          document.getElementById("navmenu").style.display = "block";
-          document.getElementById("logoutLink").style.display = "inline-block";
-        } else {
-          document.getElementById("loginLink").style.display = "inline-block";
-        }
-      </script>
+            if (isLoggedIn) {
+            document.getElementById("navmenu").style.display = "block";
+            document.getElementById("logoutLink").style.display = "inline-block";
+            } else {
+            document.getElementById("loginLink").style.display = "inline-block";
+            }
+        </script>
 
 
-    </div>
+        </div>
   </header>
 
 
