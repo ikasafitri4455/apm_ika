@@ -315,7 +315,7 @@
                                 </td>
                                 <td>
                                     @if(in_array($pengaduan->status, ['diproses', 'selesai', 'ditolak']))
-                                        <a href="/tanggapandariadmin/{{$pengaduan->id}}">
+                                        <a href="/tanggapan_admin/{{$pengaduan->id}}">
                                             <span class="badge
                                                 @if($pengaduan->status == 'diproses') bg-info
                                                 @elseif($pengaduan->status == 'selesai') bg-success

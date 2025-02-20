@@ -83,9 +83,11 @@ Route::middleware(['auth', 'role:petugas,admin,masyarakat'])->group(function () 
     Route::get('/edit_masyarakat/{id}', [MasyarakatController::class, 'edit']);
     Route::post('/update/masyarakat/{id}', [MasyarakatController::class, 'update']);
     Route::delete('/destroy_masyarakat/{id}', [MasyarakatController::class, 'destroy'])->name('masyarakat.destroy');
+    Route::get('/tanggapan_admin/{id}', [MasyarakatController::class, 'data_tanggapan']);
+
 
     //data pengaduan
-    Route::get('data_pengaduan',[PengaduanController::class,'index']);
+    Route::get('data_pengaduan',[PengaduanController::class,'index'])->name('pengaduan.data_pengaduan');
     Route::get('tambah_pengaduan',[PengaduanController::class,'create']);
     Route::post('/store/pengaduan', [PengaduanController::class, 'store']);
     Route::get('/edit_pengaduan/{id}',[PengaduanController::class,'edit']);
@@ -103,9 +105,9 @@ Route::middleware(['auth', 'role:petugas,admin,masyarakat'])->group(function () 
     Route::delete('/destroy_tanggapan/{id}',[PengaduanController::class,'destroy'])->name('tanggapan.destroy');
 
     //generate laporan
-    Route::get('/generate_laporan', [PengaduanController::class, 'report'])->name('generate.laporan');
-    Route::get('/export-laporan-pengaduan', [PengaduanController::class, 'exportLaporan'])->name('pengaduan.export');
-    Route::get('/formulir_laporan/{id}',[PengaduanController::class,'formulir']);
+    Route::get('/generate_laporan', [PengaduanController::class, 'report'])->name('pengaduan.laporan');
+    Route::get('/formulir_laporan', [PengaduanController::class, 'formulir'])->name('pengaduan.formulir');
+    Route::get('/export-laporan', [PengaduanController::class, 'exportLaporan'])->name('pengaduan.export');
 
     //profie
     Route::get('/detail_profile/{id}',[AdminController::class,'detailprofile']);

@@ -51,17 +51,23 @@
                             </td>
 
                             <td>
-                                <a href="/tambah_tanggapan/{{$pengaduan->id}}"><span class="badge
-                                    @if($pengaduan->status == 'pending') bg-warning
-                                    @elseif($pengaduan->status == 'proses') bg-info
-                                    @else bg-success
-                                    @endif">
-                                    {{ ucfirst($pengaduan->status) }}
-                                </span></a>
+                                <a href="/tambah_tanggapan/{{$pengaduan->id}}">
+                                    <span class="badge
+                                        @if($pengaduan->status == 'pending') bg-warning
+                                        @elseif($pengaduan->status == 'diproses') bg-success
+                                        @elseif($pengaduan->status == 'selesai') bg-primary
+                                        @elseif($pengaduan->status == 'ditolak') bg-danger
+                                        @endif">
+                                        {{ ucfirst($pengaduan->status) }}
+                                    </span>
+                                </a>
                             </td>
+
                             <td>
 
-
+                                <a href="/tambah_tanggapan/{{$pengaduan->id}}"><span class="btn btn-warning">
+                                    <span class="">T</span>
+                                </span></a>
                                 <a href="/edit_pengaduan/{{$pengaduan->id}}"class="btn btn-sm btn-info mt-1">E</a><br>
                                 <!-- Link Penghapusan -->
                                 <form action="{{ route('destroy_pengaduan', $pengaduan->id) }}" method="POST" style="display:inline-block;">

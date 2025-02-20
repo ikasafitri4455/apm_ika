@@ -26,7 +26,7 @@
             <p>Bersama surat ini kami laporkan data pengaduan masyarakat berdasarkan sistem yang telah diterima sebagai berikut:</p>
 
             <!-- Data Table -->
-            <div class="table-responsive mt-3">
+            <div class="table-responsive mt-3 ">
                 <table class="table table-bordered">
                     <thead class="table-dark">
                         <tr>
@@ -35,6 +35,7 @@
                             <th>Tanggal Pengaduan</th>
                             <th>Kategori</th>
                             <th>Isi Pengaduan</th>
+                            <th>foto</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -46,6 +47,7 @@
                             <td>{{ $pengaduan->tanggal_pengaduan }}</td>
                             <td>{{ $pengaduan->kategori->nama_kategori }}</td>
                             <td>{{ $pengaduan->isi_pengaduan }}</td>
+                            <td>{{ $pengaduan->foto }}</td>
                             <td>{{ $pengaduan->status }}</td>
 
                         </tr>

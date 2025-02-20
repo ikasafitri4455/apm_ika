@@ -36,10 +36,11 @@ class Pengaduan extends Model
     }
 
     // Relasi ke model Tanggapan
-    public function tanggapan()
+    public function tanggapans()
     {
         return $this->hasMany(Tanggapan::class);
     }
+
 
 
     public function petugas(){

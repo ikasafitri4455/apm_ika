@@ -41,7 +41,7 @@
         </li>
 
 <li class="nav-item {{ request()->is('data_tanggapan','tambah_tanggapan/*') ? 'active' : '' }}">
-    
+
             <a href="{{ url('data_tanggapan') }}">
             <i class="fas fa-comments"></i>
             <p>Tanggapan</p>
@@ -54,14 +54,14 @@
                   <p>kategori</p>
               </a>
           </li>
-    @endunless
           <li class="nav-section">
-                  <span class="sidebar-mini-icon">
-                    <i class="fa fa-ellipsis-h"></i>
-                  </span>
-                  <h4 class="text-section">data </h4>
-                </li>
+              <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">data </h4>
+            </li>
 
+            @endunless
   <!-- Admin Section -->
   @unless(auth()->user()->role == 'petugas')
           <li class="nav-item {{ request()->is('admin') || request()->is('tambah_admin') || request()->is('edit_admin/*') ? 'active' : '' }}">
@@ -71,14 +71,14 @@
                   <p>Admin</p>
               </a>
           </li>
-    @endunless
           <li class="nav-item {{ request()->is('petugas') || request()->is('tambah_petugas') || request()->is('petugas/*') ? 'active' : '' }}">
 
               <a href="{{ url('petugas') }}">
                   <i class="fas fa-users-cog"></i>
                   <p>Petugas</p>
-              </a>
-          </li>
+                </a>
+            </li>
+            @endunless
           @unless(auth()->user()->role == 'petugas')
   <!-- Masyarakat Section -->
           <li class="nav-item {{ request()->is('masyarakat') ? 'active' : '' }}">
@@ -87,15 +87,15 @@
                   <p>Masyarakat</p>
               </a>
           </li>
-          @endunless
           <li class="nav-section">
-                  <span class="sidebar-mini-icon">
-                    <i class="fa fa-ellipsis-h"></i>
-                  </span>
-                  <h4 class="text-section">laporan </h4>
-                </li>
+              <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">laporan </h4>
+            </li>
+            @endunless
                 @unless(auth()->user()->role == 'petugas')
-          <li class="nav-item {{ request()->is('generate_laporan') ? 'active' : '' }}">
+          <li class="nav-item {{ request()->is('generate_laporan') || request()->is('formulir_laporan/*')  ? 'active' : '' }}">
               <a href="{{ url('generate_laporan') }}">
               <i class="bi bi-journal-text"></i>
                   <p>generate_laporan</p>
